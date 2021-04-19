@@ -2,9 +2,11 @@
 int GCD(int,int);
 void main()
 {
-    int m=288,n=108,s;
+    int m,n,s;
+    printf("Enter 2 numbers\n");
+    scanf("%d%d",&m,&n);
     s= GCD(m,n);
-    printf("The GCD of 288 and 108 is: %d",s);
+    printf("The GCD of %d and %d is: %d",m,n,s);
 }
 int GCD(int m, int n)
 {
