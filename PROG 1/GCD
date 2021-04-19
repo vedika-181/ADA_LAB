@@ -1,0 +1,21 @@
+#include<stdio.h>
+int GCD(int,int);
+void main()
+{
+    int m=288,n=108,s;
+    s= GCD(m,n);
+    printf("The GCD of 288 and 108 is: %d",s);
+}
+int GCD(int m, int n)
+{
+    int s;
+    if(n==0)
+    {
+        return m;
+    }
+    else
+    {
+        s=m%n;
+        GCD(n,s);
+    }
+}
