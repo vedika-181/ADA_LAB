@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include<stdlib.h>
+#include<stdlib.h>
+#include<time.h>
+void main()
+{
+    int i,pos,c,j,n=1000;
+    int *a;
+    printf(" N  TIME TAKEN\n");
+    while(n<=10000)
+    {
+    a=(int *)calloc(n,sizeof(int));
+    for(i=0;i<n;i++)
+    {
+        a[i]=rand()%100;
+    }
+    clock_t start,end;
+    start=clock();
+    for(i=0;i<(n-1);i++)
+    {
+        for(j=0;j<n-i-1;j++)
+        {
+            if(a[j]>a[j+1])
+            {
+               c=a[j];
+               a[j]=a[j+1];
+               a[j+1]=c;
+            }
+        }
+        
+    }
+    end=clock();
+    printf("%d  %.6f\n",n,(((double)(end-start))/CLOCKS_PER_SEC));
+    n=n+1000;
+    }
+}
